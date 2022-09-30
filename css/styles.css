@@ -12,6 +12,8 @@
     --secondary-background-color-opposit: #2F303A;
     --header-border-color: #ECECEC;
     --portfolio-border-color: #EEEEEE;
+    --hero-background-color: #C4C4C4;
+    --icon-soc-color: #afb1b8;
 }
 
 /* --------- спільні класи та теги ----------- */
@@ -167,17 +169,32 @@ header {
     letter-spacing: 0.02em;
     color: var(--secondary-text-color-main);
 
-    display: block;
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
+    gap: 10px;
+}
+
+.contacts-link:hover .contacts-icon,
+.contacts-link:focus .contacts-icon {
+    fill: currentColor;
 }
 
 /* -------- СТУДІЯ hero-------------------- */
 .hero {
-    background-color: var(--secondary-background-color-opposit);
+    background-color: var(--hero-background-color);
 
     padding-top: 200px;
     padding-bottom: 200px;
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .hero-title {
@@ -228,6 +245,7 @@ header {
 
 .features-item {
     width: 270px;
+    /* display: flex; */
 }
 
 .features-item-title {
@@ -242,6 +260,23 @@ header {
     line-height: 1.71;
     color: var(--secondary-text-color-main);
 }
+
+.features-item-container {
+    width: 270px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    background: var(--secondary-background-color-next);
+    border-radius: 4px;
+}
+
+.features-icon {}
+
+.features-item-title {}
+
+.features-item-text {}
 
 /* -------- СТУДІЯ Чим ми займаємося -------------------- */
 .doing {
@@ -303,6 +338,79 @@ header {
     font-size: 16px;
     line-height: 1.19;
     color: var(--secondary-text-color-main);
+    margin-bottom: 16px;
+}
+
+.team-cos-list {
+    display: flex;
+    margin-left: 32px;
+    margin-right: 32px;
+    gap: 10px;
+}
+
+.team-soc-item {}
+
+.team-soc-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-soc-icon {
+    fill: var(--icon-soc-color);
+}
+
+.team-soc-link:hover,
+.team-soc-link:focus {
+    background-color: var(--color-accent);
+}
+
+.team-soc-link:hover .team-soc-icon,
+.team-soc-link:focus .team-soc-icon {
+    fill: var(--primary-background-color-main);
+}
+
+/* ----------- Наші клієнти -------------------- */
+
+.clients-title {
+    font-size: 36px;
+    line-height: 1.17;
+
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.clients-list {
+    display: flex;
+    gap: 30px;
+}
+
+.clients-link {
+    display: inline-block;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-soc-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clients-logo {
+    fill: var(--icon-soc-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    border-color: var(--color-accent);
+}
+
+.clients-link:hover .clients-logo,
+.clients-link:focus .clients-logo {
+    fill: var(--color-accent);
 }
 
 /* ---------- ПОРТФОЛІО Приклади робіт -------------------- */
@@ -375,6 +483,10 @@ header {
     padding-bottom: 60px;
 }
 
+.footer-first-part {
+    min-width: 231px;
+}
+
 .footer-container>.logo {
     display: inline-block;
     margin-bottom: 20px;
@@ -387,6 +499,8 @@ header {
 
 .address {
     font-style: inherit;
+    display: inline-block;
+    min-width: 231px;
 }
 
 .address-contacts-link {
