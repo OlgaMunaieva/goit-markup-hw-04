@@ -14,6 +14,8 @@
     --portfolio-border-color: #EEEEEE;
     --hero-background-color: #C4C4C4;
     --icon-soc-color: #afb1b8;
+    --secondary-text-color-opposit-more-transparent: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.25)
 }
 
 /* --------- спільні класи та теги ----------- */
@@ -194,6 +196,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 0px 4px 4px var(--shadow-color);
 
 }
 
@@ -245,7 +248,6 @@ header {
 
 .features-item {
     width: 270px;
-    /* display: flex; */
 }
 
 .features-item-title {
@@ -271,12 +273,6 @@ header {
     background: var(--secondary-background-color-next);
     border-radius: 4px;
 }
-
-.features-icon {}
-
-.features-item-title {}
-
-.features-item-text {}
 
 /* -------- СТУДІЯ Чим ми займаємося -------------------- */
 .doing {
@@ -318,6 +314,8 @@ header {
 
 .team-item {
     background-color: var(--primary-background-color-main);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .team-card {
@@ -347,8 +345,6 @@ header {
     margin-right: 32px;
     gap: 10px;
 }
-
-.team-soc-item {}
 
 .team-soc-link {
     width: 44px;
@@ -433,9 +429,14 @@ header {
     padding: 6px 25px;
 }
 
-.filter-btn:active,
 .filter-btn:hover,
 .filter-btn:focus {
+    background-color: var(--color-accent);
+    color: var(--primary-text-color-opposit);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.filter-btn:active {
     background-color: var(--color-accent);
     color: var(--primary-text-color-opposit);
 }
@@ -453,6 +454,11 @@ header {
 
 .examples-item:nth-of-type(3n) {
     margin-right: 0;
+}
+
+.examples-item:hover,
+.examples-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples-card {
@@ -483,14 +489,55 @@ header {
     padding-bottom: 60px;
 }
 
-.footer-first-part {
-    min-width: 231px;
+.footer-container {
+    display: flex;
 }
 
-.footer-container>.logo {
+.footer-first-part {
+    margin-right: 70px;
+
+    width: 231px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-second-part {
+    margin-top: 12px;
+}
+
+.footer-second-part>p {
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    color: var(--primary-text-color-opposit);
+
+    margin-bottom: 20px;
+}
+
+.footer .team-cos-list {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer .team-soc-icon {
+    fill: var(--primary-background-color-main);
+}
+
+.footer .team-soc-link:hover,
+.footer .team-soc-link:focus {
+    background-color: var(--color-accent);
+}
+
+.footer .team-soc-link {
+    background-color: var(--secondary-text-color-opposit-more-transparent);
+}
+
+.footer .logo {
     display: inline-block;
     margin-bottom: 20px;
-    padding: 0 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .footer {
